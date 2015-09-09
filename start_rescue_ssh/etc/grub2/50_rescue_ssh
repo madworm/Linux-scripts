@@ -1,6 +1,9 @@
 # THIS IS JUST A DEMO! USE YOUR OWN (see /boot/grub2/grub.conf)
 # make sure to use 'vmlinuz' and 'initrd' WITHOUT kernel version numbers as below
 # don't forget to add the kernel paramter 'start_rescue_ssh'
+#
+# Run 'grub2-mkconfig' or 'yast2 bootloader' after changes to '/etc/grub2/'.
+#
 
 menuentry 'Rescue SSH' {
 	load_video
