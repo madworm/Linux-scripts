@@ -8,7 +8,7 @@
 [Unit]
 Description=Remote-admin hack via pub-key-auth ssh
 ConditionFileIsExecutable=/usr/local/bin/rescue_ssh.sh
-After=getty.target
+After=getty.target SuSEfirewall2.service SuSEfirewall2_init.service
 
 [Service]
 Type=idle
