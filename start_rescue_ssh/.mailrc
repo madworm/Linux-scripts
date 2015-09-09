@@ -1,0 +1,9 @@
+set asksub append dot save crt=20
+ignore Received Message-Id Resent-Message-Id Status Mail-From Return-Path Via
+
+set smtp=smtp.provider.com:25
+set smtp-use-starttls
+set smtp-auth=login
+set smtp-auth-password=password
+set smtp-auth-user=dad@provider.com
+

@@ -1,0 +1,21 @@
+# THIS IS JUST A DEMO! USE YOUR OWN (see /boot/grub2/grub.conf)
+# make sure to use 'vmlinuz' and 'initrd' WITHOUT kernel version numbers as below
+# don't forget to add the kernel paramter 'start_rescue_ssh'
+
+menuentry 'Remote SSH' {
+	load_video
+	set gfxpayload=keep
+	insmod gzio
+	insmod part_msdos 
+	insmod ext2
+	set root='hd0,msdos1'
+	if [ x$feature_platform_search_hint = xy ]; then
+	  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 --hint='hd0,msdos1' XXXXXX-XXXX-XXXX...
+	else
+	  search --no-floppy --fs-uuid --set=root XXXXXX-XXXX-XXXX...
+	fi
+	echo	'Loading Linux ...'
+	linux	/vmlinuz root=UUID=YYYYYY-YYYY-YYYY... splash=silent quiet showopts start_rescue_ssh
+	echo	'Loading initial ramdisk ...'
+	initrd	/initrd
+}
