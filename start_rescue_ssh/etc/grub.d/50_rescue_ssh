@@ -1,8 +1,14 @@
+#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
+
 # THIS IS JUST A DEMO! USE YOUR OWN (see /boot/grub2/grub.conf)
 # make sure to use 'vmlinuz' and 'initrd' WITHOUT kernel version numbers as below
 # don't forget to add the kernel paramter 'start_rescue_ssh'
 #
-# Run 'grub2-mkconfig' or 'yast2 bootloader' after changes to '/etc/grub2/'.
+# Run 'grub2-mkconfig > /boot/grub2/grub.cfg' or 'yast2 bootloader' after changes to '/etc/grub.d/'.
 #
 
 menuentry 'Rescue SSH' {
