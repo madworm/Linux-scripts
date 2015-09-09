@@ -2,7 +2,7 @@
 # make sure to use 'vmlinuz' and 'initrd' WITHOUT kernel version numbers as below
 # don't forget to add the kernel paramter 'start_rescue_ssh'
 
-menuentry 'Remote SSH' {
+menuentry 'Rescue SSH' {
 	load_video
 	set gfxpayload=keep
 	insmod gzio
