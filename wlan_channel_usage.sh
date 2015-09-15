@@ -8,4 +8,4 @@ then
 	exit;
 fi
 
-iwlist $1 scan |grep Frequency | uniq -c | sort -n -k 5 
+iwlist $1 scan |grep Frequency | uniq -c | sort -n -k 5 | gawk '{print} {SUM=SUM+$1} END {print "\n      " SUM "\n"}'
